@@ -14,12 +14,9 @@ class Loader extends Plugin implements Listener{
 	}
 
 	public function onPlayerLogin(PlayerLoginEvent $event, Server $level){
-		if($level === null or ($this->isLevelLoaded($level->getFolderName()) and $level !== $this->levelDefault)){
+		if($level === null or ($this->isLevelLoaded($level->getFolderName())){
 			$this->levelDefault = $level;
 			$event->getPlayer()->teleport(Server::getInstance()->getDefaultLevel()->getSpawnLocation());
 		}
-		
-		
 	}
-
 }
