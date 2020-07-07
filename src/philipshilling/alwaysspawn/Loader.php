@@ -6,6 +6,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerLoginEvent;
 use pocketmine\plugin\PluginBase as Plugin;
 use pocketmine\Server;
+use pocketmine\event\level\SpawnChangeEvent;
 
 class Loader extends Plugin implements Listener{
 	public function onEnable(){
@@ -14,7 +15,7 @@ class Loader extends Plugin implements Listener{
 	}
 
 	public function onPlayerLogin(PlayerLoginEvent $event){
-		$event->getPlayer()->teleport(Server::getInstance()->getDefaultLevel()->getSpawnLocation());
+		$event->getPlayer()->teleport(Server::getInstance()->getDefaultLevel()->getPreviousSpawn());
 		
 	}
 
