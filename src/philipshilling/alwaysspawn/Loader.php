@@ -13,7 +13,7 @@ class Loader extends Plugin implements Listener{
 	}
 
 	public function onPlayerLogin(PlayerLoginEvent $event){
-		$event->getPlayer()->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
+		$event->getPlayer()->teleport($this->getServer()->getLevel()->getSafeSpawn());
 	}
 
 }
