@@ -12,8 +12,9 @@ class Loader extends Plugin implements Listener{
 		$this->getServer()->getLogger()->info("AlwaysSpawn Enabled!");
 	}
 
-	public function onPlayerLogin(PlayerLoginEvent $login){
-		$event->getPlayer()->teleport($this->getServer()->getDefaultLevel()->getSpawn());
+	public function onPlayerLogin(PlayerLoginEvent $event){
+		$event->getPlayer()->teleport(Server::getInstance()->getDefaultLevel()->getSpawnLocation());
+		
 	}
 
 }
