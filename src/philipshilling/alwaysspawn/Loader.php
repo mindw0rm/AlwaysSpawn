@@ -18,7 +18,7 @@ class Loader extends Plugin implements Listener{
 		      $level = $default->getDefaultLevel();
 			
 		} elseif ($level != null) {
-		      $event->getPlayer()->teleport(Server::getInstance()->getDefaultLevel()->getSpawnLocation());
+		      $event->getPlayer()->teleport(Server::getInstance()->getDefaultLevel()->getSafeSpawn());
 		}
 	}
 }
