@@ -15,7 +15,7 @@ class Loader extends Plugin implements Listener{
 	}
 
 	public function onPlayerLogin(PlayerLoginEvent $event){
-		$event->getPlayer()->teleport(Server::getInstance()->getDefaultLevel()->getPreviousSpawn());
+		$event->getPlayer()->teleport(Server::getInstance()->getDefaultLevel($this->getPreviousSpawn()));
 		
 	}
 
